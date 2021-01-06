@@ -1,0 +1,132 @@
+.header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    ._container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    ._logo a{
+        font-family: 'Din Pro';
+        font-weight: 500;
+        color: #fff;
+    }
+    ._menu {
+        display: flex;
+        align-items: center;
+    }
+    
+    ._btn-menu{
+        cursor: pointer;
+        position: relative;
+    }
+
+    ._btn-menu::after, ._btn-menu::before, ._btn-menu>span {
+        content: "";
+        position: absolute;
+        left: 0;
+        display: block;
+        height: 2px;
+        width: 100%;
+        border-radius: 1.5rem;
+        background: #fff;
+        transition: 0.4s all;
+        z-index: 10000;
+    }
+
+    ._btn-menu::before {
+        top: 0;
+    }
+
+    ._btn-menu::after {
+        bottom: 0;
+    }
+
+    ._btn-menu>span {
+        top: 50%;
+        transform: translateY(-50%);
+    }
+
+    ._main-menu {
+        background: $blue-color;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        color: #fff;
+        transform: translateX(100%);
+        transition: transform 0.4s linear, 0.5s border-radius linear;
+        z-index: 9999;
+        border-radius: 20% 0 0 20%;
+    }
+
+    ._main-menu-wrap {
+        margin: 10%;
+        height: 80%;
+        width: 80%;
+    }
+
+    ._main-menu-content {
+        border-right: 2px solid #fff;
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+body.menu-active {
+    .header{
+        ._main-menu {
+            transform: translateX(0);
+            border-radius: 0;
+        }
+
+        ._btn-menu::before {
+            transform: rotate(-45deg);
+            top: 1rem;
+        }
+
+        ._btn-menu::after {
+            transform: rotate(45deg);
+            top: 1rem;
+        }
+
+        ._btn-menu span {
+            transform: scale(0);
+        }
+    }
+
+}
+
+
+
+
+#{$isDesktop} {
+    .header {
+        padding: 1.5rem 0;
+        ._logo a{
+            font-size: 2.8rem;
+        }
+
+        ._btn-menu{
+            width: 2.4rem;
+            height: 1.6rem;
+        }
+
+        ._main-menu-content {
+            width: 20%;
+        }
+
+        ._main-menu-item {
+            padding: 1rem;
+            a {
+                text-transform: uppercase;
+                font-size: 1.8rem;
+            }
+        }
+    }
+}

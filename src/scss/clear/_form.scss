@@ -1,0 +1,42 @@
+%CLEAR-FORM-BASE{
+  border: 0;
+  padding: 0;
+  background: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  font: inherit;
+  &:focus{
+    outline: none;
+  }
+}
+
+%CLEAR-FORM-INPUT{
+  @extend %CLEAR-FORM-BASE;
+  &[type='buttom'], &[type='submit'], &[type='reset']{
+    cursor: pointer;
+  }
+  &:invalid{
+    outline: none;
+    box-shadow: none;
+    border-color: #f00;
+  }
+}
+%CLEAR-FORM-BUTTON{
+  @extend %CLEAR-FORM-BASE;
+  cursor: pointer;
+}
+
+%CLEAR-FORM-TEXTAREA{
+  @extend %CLEAR-FORM-BASE;
+}
+
+%CLEAR-FORM-SELECT{
+  @extend %CLEAR-FORM-BASE;
+  &:invalid:not(:placeholder-shown) {
+    outline: none;
+    box-shadow: none;
+    border-color: #f00;
+  }
+}

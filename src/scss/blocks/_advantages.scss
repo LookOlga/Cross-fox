@@ -1,0 +1,119 @@
+.advantages {
+    background: $black-bg;
+    position: relative;
+    overflow: hidden;
+
+    ._wrapper {
+        display: flex;
+        position: relative;
+        z-index: 10;
+        justify-content: space-between;
+    }
+
+    ._sec-name {
+        @include SECTION-NAME($blue-color);
+    }
+
+    ._sec-title {
+         @include SECTION-TITLE(#fff);
+        
+    }
+
+    ._desc {
+        color: #fff
+    }
+
+    .button {
+        @include BUTTON($magenta-color, rgba(245, 81, 223, 0.25))
+    }
+
+    ._items {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    ._item {
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        svg {
+            width: 5rem;
+            height: 5rem;
+            margin-right: 2.5rem; 
+        }
+
+        ._item-title {
+            line-height: 1.6;
+        }
+        
+    }
+
+    .blue-striped-circle {
+        @include CIRCLE($blue-color, -45deg, 1.5rem, 0.8rem, 2.3rem);
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 30rem;
+        height: 30rem;
+        transform: translate(70%, 50%) rotate(-30deg);
+    }
+
+    .grey-striped-rect {
+        @include STRIPED-RECT($grey-color, 1.5rem, 0.8rem, 2.3rem, 25rem, 25rem);
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-70%, 150%) rotate(30deg);
+    }
+}
+
+#{$isDesktop} {
+    .advantages {
+        padding: 10rem 0;
+        ._text {
+            max-width: 55rem;
+            margin-top: 3rem;
+            width: 40%;
+        }
+
+        ._desc {
+            margin-top: 3.5rem;
+        }
+
+        .button {
+            min-width: 25rem;
+            padding: 1.8rem;
+            margin-top: 4rem;
+            transition: all 0.1s linear;
+           
+        }
+
+        ._items {
+            margin: 0 -1.5rem;
+            width: 60%;
+        }
+
+        ._item {
+            width: 28%;
+            margin: 3rem 1.5rem 0;
+            border: 0.2rem solid #fff;
+            border-radius: 2rem;
+            padding: 2rem;
+           
+        }
+
+        ._item-title {
+            font-size: 2rem;
+            margin-top: 2rem;
+        }
+        ._item-desc {
+            margin-top: 2rem;
+            color: rgba($color: #fff, $alpha: .8);
+            font-size: 1.4rem;
+        }
+
+        
+}
+
+}

@@ -1,0 +1,23 @@
+@mixin CIRCLE($color, $gradus, $sizeA, $sizeB, $sizeC){
+    background: repeating-linear-gradient($gradus, transparent, transparent $sizeA, $color $sizeB, $color $sizeC);
+    border-radius: 50%;
+    pointer-events: none;
+
+}
+
+@mixin STRIPED-RECT ($color, $sizeA, $sizeB, $sizeC, $width, $height){
+    background: repeating-linear-gradient(transparent, transparent $sizeA, $color $sizeB, $color $sizeC);
+    pointer-events: none;
+    width: $width;
+    height: $height;
+
+}
+
+@mixin DOT-RECT($color, $dotSize, $bgSize, $bgPos) {
+    background-image:radial-gradient($color $dotSize,transparent 0),
+    radial-gradient($color $dotSize, transparent 0);
+    background-size: $bgSize $bgSize;
+    background-position: 0 0, $bgPos $bgPos;
+    pointer-events: none;
+}
+

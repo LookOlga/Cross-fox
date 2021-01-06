@@ -1,0 +1,72 @@
+.about {
+    position: relative;
+    overflow: hidden;
+    ._wrapper {
+        @include wrapper;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 10;
+    }
+    ._sec-name {
+        @include SECTION-NAME($magenta-color);
+    }
+    ._sec-title {
+        @include SECTION-TITLE($text-color);
+    }
+    
+    ._photo {
+        border-radius: 2rem;
+    }
+
+    ._item-title {
+        color: $blue-color;
+    }
+
+    .light-grey-circle {
+        @include CIRCLE($light-grey-color, 45deg, 2rem, 1rem, 3rem);
+        width: 40rem;
+        height: 40rem;
+        position: absolute;
+        bottom: 0;
+        left: 30%;
+        transform: translateY(25%);
+    }
+
+}
+
+#{$isDesktop} {
+    .about {
+        margin-top: 10rem;
+        padding-bottom: 10rem;
+
+        ._text {
+            width: 58rem;
+        }
+
+        ._desc {
+            margin-top: 3.5rem;
+            p{
+                margin-top: 1.2rem;
+            }
+        }
+        ._photo {
+            width: 48rem;
+            height: 65rem;
+        }
+        ._list {
+            width: 37rem;
+        }
+
+        ._item {
+            margin-top: 5rem ;
+        }
+
+        ._item-title {
+            font-size: 2.4rem;
+        }
+
+        ._item-desc{
+            margin-top: 2rem;
+        }
+    }
+}

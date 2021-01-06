@@ -1,0 +1,80 @@
+@import 'clear/base';
+@import 'clear/form';
+@import 'clear/text';
+@import 'clear/list';
+
+@import 'base/variables';
+@import 'base/form';
+@import 'base/decor-elements';
+
+@import 'libs/fonts';
+
+@import 'blocks/header';
+@import 'blocks/promo';
+@import 'blocks/about';
+@import 'blocks/advantages';
+@import 'blocks/reviews';
+
+html {
+    @extend %CLEAR-HTML;
+}
+
+body  {
+    @extend %CLEAR-BODY;
+    font-family: 'Montserrat', sans-serif;
+    font-size: $font-sm;
+    color: $text-color;
+    font-weight: 400;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+a {
+    @extend %CLEAR-A;
+}
+
+form {
+    @extend %CLEAR-FORM-BASE;
+}
+
+ul {
+    @extend %CLEAR-LIST;
+}
+
+ul {
+    @extend %CLEAR-IMG;
+}
+
+button {
+    @extend %CLEAR-FORM-BUTTON;
+}
+
+input {
+    @extend %CLEAR-FORM-INPUT;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @extend %CLEAR-H1;
+    @include FONT-DIN;
+    line-height: 1.2;
+    font-weight: 600;;
+}
+
+p {
+    @extend %CLEAR-P;
+}
+
+.container {
+    width: 100%;
+    max-width: 84.4%;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+// @media (max-width: 1440px) {
+//     html {
+//         font-size: 0.6vw;
+//     }
+// }

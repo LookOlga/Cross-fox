@@ -1,0 +1,94 @@
+.reviews {
+    background: #f1f1f8;
+    display: flex;
+    align-items: center;
+    position: relative;
+    ._sec-name {
+        @include SECTION-NAME($magenta-color);
+        position: relative;
+        z-index: 1000;
+    }
+    ._sec-title {
+        @include SECTION-TITLE($text-color);
+    }
+
+
+    ._items {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    ._item {
+        background-color: #fff;
+        color: #70798b;
+        border-radius: 2rem;
+    }
+    ._item-desc {
+        border-bottom: 1px solid #c2c2c2;
+        font-weight: 300;
+    }
+    ._item-name {
+        color: $text-color;
+        font-weight: 600;
+    }
+
+    .magenta-striped-rect {
+        @include STRIPED-RECT($magenta-color, 1.5rem, 0.8rem, 2.3rem, 19rem, 19rem);
+        position: absolute;
+        top: 0;
+        right: 0;
+        transform: translate(60%, 50%) rotate(-45deg);
+    }
+
+    .white-dotted-rect {
+        @include DOT-RECT(#fff, 0.5rem, 3.5rem, 1.75rem);
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 15rem;
+        height: 15rem;
+        transform: translate(-50%, 200%) rotate(-15deg);
+    }
+}
+
+#{$isDesktop} {
+    .reviews {
+        min-height: 95vh;
+        padding: 10rem 0;
+
+        ._text {
+            width: 72rem;
+        }
+
+        ._desc {
+            margin-top: 3.5rem;
+        }
+
+        ._items {
+            margin-top: 6rem;
+        }
+
+        ._item {
+            padding: 5rem;
+            min-width: 50rem;
+            margin-right: 3rem;
+            &:last-child {
+                margin-right: 0;
+            }
+        }
+
+        ._item-desc {
+            padding-bottom: 3rem;
+        }
+
+        ._item-name {
+            font-size: 2rem;
+            margin-top: 1.5rem;
+        }
+        ._item-city {
+            margin-top: 1rem;
+        }
+    }
+
+}

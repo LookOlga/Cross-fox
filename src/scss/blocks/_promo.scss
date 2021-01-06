@@ -1,0 +1,158 @@
+.promo {
+    background-color: $black-bg;
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    ._wrapper {
+        @include wrapper;
+        flex-wrap: wrap;
+        position: relative;
+        z-index: 10;
+    }
+
+    ._right-content {
+        flex-grow: 1;
+    }
+    ._title {
+        color: #fff;
+    }
+
+    ._desc {
+        font-weight: 400;
+        color: rgba($color: #fff, $alpha: .8);
+    }
+
+    .button {
+        @include BUTTON($blue-color, rgba(102, 81, 245, 0.25));
+    }
+
+    ._menu {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    ._item {
+        cursor: pointer;
+        svg {
+            width: 6rem;
+            height: 6rem; 
+        }
+    }
+
+    ._item-title {
+        color: #fff;
+    }
+    ._item-desc {
+        color: rgba($color: #fff, $alpha: .8);
+    }
+
+    .grey-circle {
+       @include CIRCLE($grey-color, 45deg, 2rem, 1rem, 3rem);
+        width: 45rem;
+        height: 45rem;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        transform: translateY(25%);
+    }
+
+    .blue-circle {
+        @include CIRCLE($blue-color, -45deg, 1.5rem, 0.8rem, 2.3rem);
+        width: 30rem;
+        height: 30rem;
+        position: absolute;
+        top: 13%;
+        right: 0;
+        transform: translateX(55%);
+    }
+
+    .grey-rectangle {
+        @include DOT-RECT($grey-color, 0.6rem, 4rem, 2rem);
+        width: 35rem;
+        height: 35rem;
+        position: absolute;
+        top: 0;
+        left: 50%;
+        transform: translateY(-70%) rotate(15deg);
+
+    }
+
+}
+
+#{$isDesktop} {
+    .promo {
+        min-height: 95vh;
+        padding: 10rem 0;
+        
+        ._wrapper {
+            margin-top: 8rem;
+        }
+
+        .button {
+            min-width: 25rem;
+            padding: 1.8rem;
+            margin-top: 4rem;
+            transition: all 0.1s linear;
+           
+        }
+
+        ._left-content {
+            width: 50%;
+            min-width: 60rem;
+        }
+
+        ._right-content {
+            width: 50%;
+            margin-top: 5rem;
+        }
+
+        ._title {
+            font-size: 4.8rem;
+        }
+
+        ._desc {
+            font-size: 2rem;
+            margin-top: 1.5rem;
+        }
+
+        ._item {
+            width: 40%;
+            padding: 3.5rem;
+            border-radius: 2rem;
+            transition: all 300ms linear;
+            min-height: 28rem;
+            min-width: 25rem;
+            margin: 2.5rem;
+            flex-grow: 1;
+            &:hover {
+                background-color: $blue-color;
+                box-shadow: -10px 30px 50px rgba(81,56,231,0.3);
+            }
+        }
+
+        ._item-title {
+            font-size: 2.6rem;
+            margin-top: 1.5rem;
+        }
+
+        ._item-desc {
+            margin-top: 1.5rem;
+        }
+    }
+}
+
+
+// #{$isMobile} {
+//     .promo {
+//         // ._left-content {
+           
+//         // }
+
+//         // ._right-content {
+           
+//         // }
+
+//         // .item {
+            
+//         // }
+//     }
+// }

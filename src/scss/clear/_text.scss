@@ -1,0 +1,61 @@
+%CLEAR-H1{
+  margin:0;
+}
+
+%CLEAR-P{
+  line-height: 1.75;
+  margin: 0;
+}
+
+@mixin FONT-DIN {
+  font-family: 'DIN Pro';
+}
+
+@mixin SECTION-NAME($color) {
+  font-size: 1.8rem;
+  font-weight: 500;
+  color: #fff;
+  padding: 0.7rem 3rem;
+  border-radius: 5rem;
+  background: $color;
+  display: inline-block;
+  line-height: 1;
+  min-width: 13rem;
+  text-align: center;
+}
+
+@mixin SECTION-TITLE($color) {
+  font-size: 4.4rem;
+  font-weight: 600;
+  color: $color;
+  margin-top: 4rem;
+}
+
+@mixin wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: space-between
+}
+
+@mixin flex-center($dir: 'all'){
+  display: flex;
+  @if $dir == 'all'{
+    align-items: center;
+    justify-content: center;
+  }@else if $dir == 'y' {
+    align-items: center;
+  }@else if $dir == 'x' {
+    justify-content: center;
+  }
+}
+
+@mixin center($prop: 'margin'){
+  @if $prop == 'all'{
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }@else if $prop == 'margin' {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
